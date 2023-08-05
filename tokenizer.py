@@ -1,3 +1,5 @@
+## Corpus data bata csv ma convert garne (Tokenizer)
+
 import nltk
 import os
 import glob  
@@ -16,7 +18,7 @@ for filePath in fileList:
          text += file.read()  #accumulating contents of all files: sabbai file ko content jodeko
 
 
-punctuation = ['।',',','-','(',')']
+punctuation = ['।',',','-','(',')','.']
 
 for p in punctuation:
     text=text.replace(p,'')
