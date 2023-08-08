@@ -7,7 +7,7 @@ import csv
 from nltk import word_tokenize
 
 
-folderPath='Nepali_Corpus/Corpus'
+folderPath='Nepali_Corpus/test'
 
 fileList = glob.glob(os.path.join(folderPath,'*.txt'))
 
@@ -18,7 +18,7 @@ for filePath in fileList:
          text += file.read()  #accumulating contents of all files: sabbai file ko content jodeko
 
 
-punctuation = ['।',',','-','(',')','.']
+punctuation = ['।',',','-','(',')','.','’','‘']
 
 for p in punctuation:
     text=text.replace(p,'')
@@ -28,7 +28,7 @@ spltext= word_tokenize(text)
 
 # print(spltext)
 
-out='dataset_opt.csv'
+out='test1.csv'
 
 with open(out, 'w', newline='', encoding='utf-8-sig') as csvfile:
     csv_writer = csv.writer(csvfile)
