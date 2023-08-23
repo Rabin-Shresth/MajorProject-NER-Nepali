@@ -15,7 +15,7 @@ def read_corpus(folderPath):
 
 ## Function to remove punctuation
 def remove_punctuation(text):
-    punctuation = ['।',',','-','(',')','.','’','‘']
+    punctuation = ['।',',','-','(',')','.','’','‘','!','"','?']
     for p in punctuation:
         text=text.replace(p,'')
     return text
@@ -27,7 +27,7 @@ def remove_stopwords(stopwords, text):
 
 ## Function to tokenize
 def tokenize():
-    folderPath='Nepali_Corpus/Corpus'
+    folderPath='Nepali_Corpus/SetoPati/politics'
     stopWords = './stopword1.txt'
     text=read_corpus(folderPath)
     text=remove_punctuation(text)
@@ -39,7 +39,7 @@ def tokenize():
 
 ## Function to write tokenized data to csv file
 def write_to_csv(spltext):
-    out='nepali_data_set_1.csv'
+    out='nepali_data_set_.csv'
     with open(out, 'w', newline='', encoding='utf-8-sig') as csvfile:
         csv_writer = csv.writer(csvfile)
         csv_writer.writerow(['Words'])
